@@ -1,0 +1,164 @@
+// See https://quarto.org/docs/presentations/revealjs/themes.html#saas-variables
+
+$brand-red: #e64626; 
+$brand-blue: #0148A4; 
+$brand-yellow: #FFB800; 
+$brand-charcoal: #424242; 
+$brand-gray: #F1F1F1;
+$brand-grey: #F1F1F1;
+
+/*-- scss:defaults --*/
+
+// icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+$roboto: 'Roboto', Arial, sans-serif;   
+$roboto-cond: 'Roboto Condensed', Arial, sans-serif;   
+$code-font: 'Source Code Pro', 'Lucida Console', Monaco, monospace; 
+$blockquote-font: 'Patrick Hand', cursive;
+
+// colors
+$body-bg: #fff;
+$body-color: #222;
+$link-color: #2a76dd;
+$selection-bg: lighten($link-color, 25%);
+
+
+// website
+$font-family-sans-serif: $roboto !default;
+$font-family-monospace: $code-font !default;
+$body-color: $brand-charcoal;
+$navbar-bg: #333333;
+//$navbar-color: #0F2E3D;
+$link-color: $brand-red;
+
+// headings
+$presentation-heading-font: $roboto-cond !default;
+$presentation-heading-color: #383d3d !default;
+
+// title slide
+$presentation-title-slide-text-align: left; 
+
+// body
+$presentation-font-size-root: 28px; // default is 40px
+$presentation-font-smaller: 0.9 !default;
+$presentation-line-height: 1.3; // default is 1.3
+
+// code blocks
+
+$code-block-bg: $brand-grey;
+// $code-block-border-color:	lighten($body-color, 60%); 
+$code-block-font-size: 	0.75em;
+// $code-color: $brand-charcoal; // var(–quarto-hl-fu-color);
+// $code-bg: transparent;
+
+
+/*-- scss:rules --*/
+
+
+.reveal .slide-background:first-child {
+    background-image: url("https://raw.githubusercontent.com/DATA2002/data/master/usydlogo-white.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+    background-size: 15%;
+    background-color: $brand-red;
+}
+
+
+.reveal .slide aside, .reveal .slide div.aside {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.6em;
+    color: #8f8f8f;
+}
+
+.red {
+  color: $brand-red;
+}
+.blue {
+  color: $brand-blue;
+}
+
+.slide smaller {
+  font-size: $presentation-font-smaller;
+}
+
+.blockquote, .reveal .slide blockquote {
+  /* border-left: 3px solid $text-muted; */
+  /* padding-left: 0.5em; */
+  
+  display: block;
+  position: relative;
+  font-family: $blockquote-font;
+  font-size: 1.2em;
+  /* font-style: italic; */
+  color: $brand-charcoal;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+  border-left: solid 0.3rem $brand-blue;
+  /* matches with .callouts */
+  border-top: solid 1px silver; 
+  border-bottom: solid 1px silver; 
+  border-right: solid 1px silver; 
+  /* box-shadow: 0 0 6px rgba(0,0,0,0.5); */
+  /* background-color: #e64626; */
+  
+  /* padding: 0.5em; */ 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  
+  
+    width: unset;
+    margin: var(--r-block-margin) auto;
+    padding: 0.625rem 1.75rem;
+}
+
+.reveal .slides section .callout {
+  font-size: inherit;
+}
+
+.reveal .callout.callout-style-simple .callout-body,
+.reveal .callout.callout-style-default .callout-body,
+.reveal .callout.callout-style-simple div.callout-caption,
+.reveal .callout.callout-style-default div.callout-caption {
+  font-size: inherit;
+}
+
+.reveal .callout.callout-style-default .callout-icon::before, 
+.reveal .callout.callout-style-simple .callout-icon::before {
+  height: 2rem;
+  width: 2rem;
+  background-size: 2rem 2rem;
+}
+
+.reveal .title-slide {
+  background-color: $brand-blue;
+  }
+
+// customisations for printing to pdf
+  
+.print-pdf .reveal .title-slide {
+      background-color: #FFFFFF;
+    }
+    
+.print-pdf {
+  section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+     color: #000000 !important;
+  }
+}
+
+.print-pdf .reveal .slide-background {
+      background-color: #FFFFFF !important;
+  }
+
+.print-pdf .reveal .has-dark-background {
+    color: #222 !important;
+  }
+
+
