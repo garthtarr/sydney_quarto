@@ -10,14 +10,14 @@ format:
     toc-depth: 1
     number-sections: false
     toc-title: "In this lecture"
-    theme: [default, "assets/sydney.scss"]
+    theme: [default, "sydney.scss"]
     code-line-numbers: false
     slide-number: c
     scrollable: false
     pdf-max-pages-per-slide: 1
     history: false # don't add each slide to browser history
 bibliography: pres_bib.bib
-csl: assets/apa-old-doi-prefix.csl
+csl: apa-old-doi-prefix.csl
 execute:
   echo: true
 ---
@@ -100,6 +100,38 @@ Left column
 Right column
 :::
 :::
+
+## Plots: below code
+
+```{r}
+library(ggplot2)
+p1 = iris |> ggplot() +
+  aes(x = Petal.Length, y = Petal.Width, colour = Species) + 
+  geom_point(size = 4) + theme_classic(base_size = 20)
+p1
+```
+
+## Plots: hide code
+
+```{r}
+#| echo: false
+p1
+```
+
+## Plots: auto two column
+
+```{r}
+#| output-location: column
+#| fig-height: 8
+p1 = iris |> ggplot() +
+  aes(x = Petal.Length, 
+      y = Petal.Width, 
+      colour = Species) + 
+  geom_point(size = 4) + 
+  theme_classic(base_size = 30)
+p1
+```
+
 
 
 ## Bullets
