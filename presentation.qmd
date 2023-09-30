@@ -22,22 +22,27 @@ execute:
   echo: true
 ---
 
-# Title slide
+```{r, echo = FALSE}
+library(tidyverse)
+```
+
+
+# First section
 
 ## Quarto
 
 :::{.callout-note}
-#### Note title
+### Note title
 Note text
 :::
 
 :::{.callout-tip}
-#### Tip title
+### Tip title
 Tip text
 :::
 
 :::{.callout-important}
-#### Important title
+### Important title
 Important text
 :::
 
@@ -51,13 +56,6 @@ Speaker notes go here. Press `s` to see.
 Footers for comments, often with links to further resources. Doesn't show up when printing the slides.
 :::
 
-## {#xkcd-selection-bias data-menu-title="Selection bias" background="black"}
-
-![](xkcd_selection_bias.png){fig-align="center" fig-alt="We carefully sampled the general population and found that most people are familiar with acquiescence bias."}
-
-::: footer
-Source: [XKCD](https://xkcd.com/2618/)
-:::
 
 ## Asides
 
@@ -67,7 +65,7 @@ Source: [XKCD](https://xkcd.com/2618/)
 - Icons can be included by installing the [fontawesome](https://github.com/quarto-ext/fontawesome) Quarto [extension](https://quarto.org/docs/extensions/).
 
 ::: aside
-This will be on the slide when printed.
+Asides will be on the slide when printed.
 :::
 
 # Layouts
@@ -152,5 +150,17 @@ When you click the **Render** button a presentation will be generated that inclu
 ```{r}
 1 + 1
 ```
+
+## Handy R package
+
+The [`quartostamp`](https://matt-dray.github.io/quartostamp/index.html) R package provides RStudio "Addins" that make life easier for working with Quarto documents. It has a bunch of templates, e.g. for creating 
+
+- callout blocks
+- columns
+- tabsets
+- footnotes
+- pauses
+- speaker notes...
+
 
 ## References
